@@ -59,6 +59,7 @@ class CucumberScenario {
      * invokes all the before hooks defined that either have no tags or tags corresponding to this scenario's tags
      */
      function invokeBeforeHooks($aTags) {
+     	var_dump($aTags);
        if (is_null($aTags)) {
          $aTags = array();
        }
