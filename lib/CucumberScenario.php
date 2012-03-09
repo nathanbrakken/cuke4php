@@ -67,7 +67,7 @@ class CucumberScenario {
            if (count($aBeforeHook['tags']) == 0 || count(array_intersect($aTags, $aBeforeHook['tags'])) > 0) {
              $oStep = CucumberSteps::getInstance($aBeforeHook['class'], $this->aGlobals);
              syslog(LOG_DEBUG,"Invoking Before Hook \"{$aBeforeHook['method']}\"");
-             $oResult = $oStep->invoke($aBeforeHook['method']);
+             $oResult = $oStep->invoke($aBeforeHook['method'], $aTags);
              if ($oResult === false) {
                return array('failure');
              }
